@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using AsyncStateMachine;
 using NUnit.Framework;
+using AsyncStateMachine;
 
 namespace Tests
 {

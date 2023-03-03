@@ -1,5 +1,5 @@
-﻿using AsyncStateMachine;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
+using AsyncStateMachine;
 
 namespace Tests
 {
