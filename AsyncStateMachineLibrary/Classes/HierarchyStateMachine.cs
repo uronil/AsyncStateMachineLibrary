@@ -24,7 +24,8 @@ namespace AsyncStateMachine
 
 			while (Current != null)
 			{
-				if (Parents.ContainsKey(nextState) && Parents[nextState].Contains(Current))
+				var currentIsParentForNext = Parents.ContainsKey(nextState) && Parents[nextState].Contains(Current);
+				if (currentIsParentForNext)
 				{
 					Stack.Push(Current);
 					return;
@@ -35,50 +36,5 @@ namespace AsyncStateMachine
 				Current = Stack.Count > 0 ? Stack.Pop() : null;
 			}
 		}
-
-		// protected async Task ExitCurrent2<TState>()
-		// {
-		// 	var nextState = GetState<TState>();
-		//
-		// 	if (Current == null)
-		// 		return;
-		//
-		// 	while (true)
-		// 	{
-		// 		var currentIsParentForNext = Parents.ContainsKey(nextState) && Parents[nextState].Contains(Current);
-		// 		if (currentIsParentForNext)
-		// 		{
-		// 			Stack.Push(Current);
-		// 			break;
-		// 		}
-		//
-		// 		await Current.Exit();
-		//
-		// 		var bothHasParents = Parents.ContainsKey(Current) && Parents.ContainsKey(nextState);
-		// 		if (bothHasParents)
-		// 		{
-		// 			var parentFound = false;
-		//
-		// 			foreach (var currentParent in Parents[Current])
-		// 			{
-		// 				var statesHasSameParent = Parents[nextState].Contains(currentParent);
-		//
-		// 				if (!statesHasSameParent)
-		// 					continue;
-		//
-		// 				Current = currentParent;
-		// 				parentFound = true;
-		// 				break;
-		// 			}
-		//
-		// 			if (!parentFound)
-		// 				Current = Stack.Pop();
-		// 		}
-		// 		else
-		// 		{
-		// 			break;
-		// 		}
-		// 	}
-		// }
 	}
 }
