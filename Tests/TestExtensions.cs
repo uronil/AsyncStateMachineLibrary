@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AsyncStateMachine.Tests
+namespace Tests
 {
 	public static class TestExtensions
 	{

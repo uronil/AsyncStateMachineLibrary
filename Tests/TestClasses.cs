@@ -1,40 +1,38 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using AsyncStateMachine;
+using Cysharp.Threading.Tasks;
 
-namespace AsyncStateMachine.Tests
+namespace Tests
 {
-	public class TestClasses
+	internal class State : IState
 	{
-		internal class State : IState
+		async UniTask IExitableState.Exit()
 		{
-			async UniTask IExitableState.Exit()
-			{
-				await UniTask.Yield();
-			}
-
-			public async UniTask Enter()
-			{
-				await UniTask.Yield();
-			}
+			await UniTask.Yield();
 		}
 
-		internal class RegisterServices : State
+		public async UniTask Enter()
 		{
+			await UniTask.Yield();
 		}
+	}
 
-		internal class Game : State
-		{
-		}
+	internal class RegisterServices : State
+	{
+	}
 
-		internal class GameLoop : State
-		{
-		}
+	internal class Game : State
+	{
+	}
 
-		internal class Settings : State
-		{
-		}
+	internal class GameLoop : State
+	{
+	}
 
-		internal class Exit : State
-		{
-		}
+	internal class Settings : State
+	{
+	}
+
+	internal class Exit : State
+	{
 	}
 }

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
+using AsyncStateMachine;
 using NUnit.Framework;
 
-namespace AsyncStateMachine.Tests
+namespace Tests
 {
 	public class TestHierarchyStateMachine
 	{
@@ -10,11 +10,11 @@ namespace AsyncStateMachine.Tests
 		public async Task TestAsyncHierarchyStateMachine()
 		{
 			var sm = new HierarchyStateMachine();
-			var register = new TestClasses.RegisterServices();
-			var game = new TestClasses.Game();
-			var gameLoop = new TestClasses.GameLoop();
-			var settings = new TestClasses.Settings();
-			var exit = new TestClasses.Exit();
+			var register = new RegisterServices();
+			var game = new Game();
+			var gameLoop = new GameLoop();
+			var settings = new Settings();
+			var exit = new Exit();
 
 			sm.Add(register);
 			sm.Add(game);
@@ -25,7 +25,7 @@ namespace AsyncStateMachine.Tests
 			sm.AddConnection(settings, game);
 			sm.AddConnection(settings, gameLoop);
 
-			await sm.Enter<TestClasses.RegisterServices>();
+			await sm.Enter<RegisterServices>();
 
 			sm.IsEntered(register).True();
 			sm.IsEntered(game).False();
@@ -33,7 +33,7 @@ namespace AsyncStateMachine.Tests
 			sm.IsEntered(settings).False();
 			sm.IsEntered(exit).False();
 			
-			await sm.Enter<TestClasses.Game>();
+			await sm.Enter<Game>();
 
 			sm.IsEntered(register).False();
 			sm.IsEntered(game).True();
@@ -41,7 +41,7 @@ namespace AsyncStateMachine.Tests
 			sm.IsEntered(settings).False();
 			sm.IsEntered(exit).False();
 
-			await sm.Enter<TestClasses.Settings>();
+			await sm.Enter<Settings>();
 
 			sm.IsEntered(register).False();
 			sm.IsEntered(game).True();
@@ -49,7 +49,7 @@ namespace AsyncStateMachine.Tests
 			sm.IsEntered(settings).True();
 			sm.IsEntered(exit).False();
 
-			await sm.Enter<TestClasses.GameLoop>();
+			await sm.Enter<GameLoop>();
 
 			sm.IsEntered(register).False();
 			sm.IsEntered(game).True();
@@ -57,7 +57,7 @@ namespace AsyncStateMachine.Tests
 			sm.IsEntered(settings).False();
 			sm.IsEntered(exit).False();
 
-			await sm.Enter<TestClasses.Settings>();
+			await sm.Enter<Settings>();
 
 			sm.IsEntered(register).False();
 			sm.IsEntered(game).True();
@@ -65,7 +65,7 @@ namespace AsyncStateMachine.Tests
 			sm.IsEntered(settings).True();
 			sm.IsEntered(exit).False();
 
-			await sm.Enter<TestClasses.Exit>();
+			await sm.Enter<Exit>();
 
 			sm.IsEntered(register).False();
 			sm.IsEntered(game).False();
