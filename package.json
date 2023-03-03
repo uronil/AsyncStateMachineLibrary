@@ -1,0 +1,11 @@
+{
+  "name": "AsyncStateMachineLibrary",
+  "displayName": "ASML",
+  "version": "1.0.0",
+  "unity": "2018.3",
+  "description": "State Machine for logic",
+  "keywords": [ "logic", "state", "states" ],
+  "category": "game logic",
+  "dependencies": {
+  }
+}
