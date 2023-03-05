@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AsyncStateMachineLibrary")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Async state machine")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ilya-ronzhin")]
 [assembly: AssemblyProduct("AsyncStateMachineLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]

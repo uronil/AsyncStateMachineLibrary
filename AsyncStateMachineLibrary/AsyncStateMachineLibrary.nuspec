@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>AsyncStateMachineLibrary</id>
+    <version>1.0.0</version>
+    <title>Async State Machine Library</title>
+    <authors>Ilya Ronzhin</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/uronil/AsyncStateMachineLibrary</projectUrl>
+    <description>Async State Machine</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2023</copyright>
+    <tags>state machine async</tags>
+  </metadata>
+</package>
