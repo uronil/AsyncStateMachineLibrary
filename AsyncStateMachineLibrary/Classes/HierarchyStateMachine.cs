@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 
 namespace AsyncStateMachine
 {
@@ -18,7 +19,7 @@ namespace AsyncStateMachine
 
 		public override bool IsEntered(IExitableState state) => Stack.Contains(state) || base.IsEntered(state);
 
-		protected override async Task ExitCurrent<TState>()
+		protected override async UniTask ExitCurrent<TState>()
 		{
 			var nextState = GetState<TState>();
 
@@ -31,7 +32,7 @@ namespace AsyncStateMachine
 					return;
 				}
 
-				await Current.Exit();
+				await ExitCurrent();
 
 				Current = Stack.Count > 0 ? Stack.Pop() : null;
 			}
