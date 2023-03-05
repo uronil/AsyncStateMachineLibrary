@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AsyncStateMachineLibrary</id>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <title>Async State Machine Library</title>
     <authors>Ilya Ronzhin</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -6,8 +6,8 @@ namespace AsyncStateMachine
 {
 	public class HierarchyStateMachine : StateMachine
 	{
-		Dictionary<IExitableState, HashSet<IExitableState>> Parents { get; } = new();
-		Stack<IExitableState>                               Stack   { get; } = new();
+		public Dictionary<IExitableState, HashSet<IExitableState>> Parents { get; } = new();
+		public Stack<IExitableState>                               Stack   { get; } = new();
 
 		public void AddConnection(IExitableState state, IExitableState parent)
 		{
