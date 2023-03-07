@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AsyncStateMachineLibrary</id>
-    <version>1.0.5</version>
+    <version>1.0.7</version>
     <title>Async State Machine Library</title>
     <authors>Ilya Ronzhin</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,7 +10,7 @@
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/uronil/AsyncStateMachineLibrary</projectUrl>
     <description>Async State Machine</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Try make public properties.</releaseNotes>
     <copyright>Copyright 2023</copyright>
     <tags>state machine async</tags>
   </metadata>

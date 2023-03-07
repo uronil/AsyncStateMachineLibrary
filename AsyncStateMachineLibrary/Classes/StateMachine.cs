@@ -11,9 +11,8 @@ namespace AsyncStateMachine
 		public event Action<IExitableState> OnExit;
 		public event Action                 OnChange;
 
-		public Dictionary<Type, IExitableState> States { get; } = new();
-
-		public IExitableState Current { get; set; }
+		public Dictionary<Type, IExitableState> States  { get; } = new();
+		public IExitableState                   Current { get; set; }
 
 		public void Add(IExitableState state)
 		{

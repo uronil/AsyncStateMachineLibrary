@@ -8,6 +8,7 @@ namespace AsyncStateMachine
 	{
 		public Dictionary<IExitableState, HashSet<IExitableState>> Parents { get; } = new();
 		public Stack<IExitableState>                               Stack   { get; } = new();
+		
 
 		public void AddConnection(IExitableState state, IExitableState parent)
 		{
